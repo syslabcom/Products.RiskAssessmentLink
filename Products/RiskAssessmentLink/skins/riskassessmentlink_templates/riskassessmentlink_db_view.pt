@@ -1,0 +1,220 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="RiskAssessmentLink">
+
+
+<metal:cssslot fill-slot="css_slot"
+               tal:define="global mockup here/@@ATMockup;
+                           dummy python:mockup.preload(types=[('RiskAssessmentLink', 'RiskAssessmentLink')]);">
+  <style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
+         tal:content="string:@import url($portal_url/riskassessment_styles.css);">
+  </style>
+
+</metal:cssslot>
+
+
+<metal:javascriptslot fill-slot="javascript_head_slot">
+
+  <script language="JavaScript">
+  function resetSize(aSelect) {
+    if(aSelect) {
+      aSelect.style.width = 'auto';
+    }
+  }
+  </script>
+
+  <tal:js define="js python:here.getUniqueWidgetAttr(mockup.getFields(), 'helper_js')"
+          condition="js"
+          repeat="item js">
+    <script type="text/javascript"
+            charset="iso-8859-1"
+            tal:condition="python:exists('portal/%s' % item)"
+            tal:attributes="src string:$portal_url/$item">
+    </script>
+  </tal:js>
+
+</metal:javascriptslot>
+
+
+<div metal:fill-slot="main"
+       tal:define="keywords request/keywords|string:;
+                   SearchableText request/SearchableText|string:;
+                   nace request/nace|string:;
+                   nace python:test(nace==[''], '', nace);
+                   provider request/remote_provider|python:'';
+                   provider python:test(provider==[''], '', provider);
+                   category request/category|string:;
+                   getRemoteLanguage request/getRemoteLanguage|string:;
+                   country request/country|string:;
+                   getCategoryIndependent request/getCategoryIndependent|string:;
+                   getCategoryIndependent python:bool(getCategoryIndependent);
+                   riskfactors request/riskfactors|string:;
+                   riskfactors python:test(riskfactors==[''], '', riskfactors);
+                   Batch python:modules['Products.CMFPlone'].Batch;
+                   DateTime python:modules['DateTime'].DateTime;
+                   b_size python:10;b_start python:0;
+                   b_start request/b_start | b_start;
+                   desc_length site_properties/search_results_description_length;
+                   desc_ellipsis site_properties/ellipsis;
+                   searchterm request/SearchableText|nothing;
+                  ">
+
+      <h1><span tal:replace="here/Title" /> -  <span i18n:translate="heading_detail_search">Detailed Search</span></h1>
+
+        <div tal:content="here/Description">
+          Description
+        </div>
+
+        <br clear="all" />
+
+        <form tal:attributes="action template/id" method="get">
+
+          <div id="searchfields">
+
+           <div class="column1">
+                    <div class="field_default" tal:define="size python:45">
+                        <metal:use use-macro="here/filter_macros/macros/SearchableText"></metal:use>
+                    </div>
+
+                <div class="columnBottom field">
+                  <div class="formHelp" i18n:translate="help_db_filter">
+                    Filter your search by selecting one or more of the filters.
+                    You can always remove any filter again by selecting the empty entry or by clicking the Reset button.
+                  </div>
+                 </div>
+
+                  <div class="field_default">
+                    <metal:use use-macro="here/filter_macros/macros/RemoteLanguage_compact"></metal:use>
+                  </div>
+
+                  <div class="field_default">
+                    <metal:use use-macro="here/filter_macros/macros/Country_compact_index"></metal:use>
+                  </div>
+           </div> <!-- end of col1 -->
+
+
+           <div class="column2">
+                    <div class="field_picker"
+                        tal:define="portal_type string:RiskAssessmentLink"> 
+                        <metal:use use-macro="here/filter_macros/macros/Provider"></metal:use>
+                     </div>
+
+                      <div class="field_picker" tal:define="level python:3;
+                            portal_type string:RiskAssessmentLink">
+                          <metal:use use-macro="here/filter_macros/macros/NACE"></metal:use>
+                      </div>
+
+                      <div class="field_picker" tal:define="level python:3;
+                                portal_type string:RiskAssessmentLink"> 
+                          <metal:use use-macro="here/filter_macros/macros/riskfactors"></metal:use>
+                      </div>
+
+
+                    <div class="columnBottom field">
+                          <div class="formHelp" tal:content="python:mockup.getField('categoryIndependent').widget.description">
+                            Text for category independent.
+                          </div>
+                     </div>
+
+                    <div class="field_default">
+                        <label for="getCategoryIndependent" tal:content="python:mockup.getField('categoryIndependent').widget.label">Category independent</label><br />
+                        
+                        <span style="float:left"><input type="checkbox" id="getCategoryIndependent" name="getCategoryIndependent" 
+                            tal:attributes="checked python:test(getCategoryIndependent, 'checked', '')" /></span>
+                        <br clear="all" /><br />
+                    </div>
+      </div>  <!-- end of col2 -->
+
+
+          <div class="visualClear"> </div>
+
+            <div class="formControls">
+                <input class="context"
+                       type="submit"
+                       name="submit"
+                       value="Search"
+                       i18n:domain="plone"
+                       i18n:attributes="value label_search;"
+                       />
+                          <input  class="context" type="reset" value="Reset"
+                        tal:attributes="onclick string:window.location='${here/absolute_url}/${template/getId}'"
+                        i18n:attributes="value"/>
+            </div>
+          </div>
+
+        </form>
+
+        <br clear="all" /><br />
+
+    <div >
+
+        <div tal:define="query python:{'portal_type': ['RiskAssessmentLink'],
+                                       'Subject':keywords,
+                                       'getRemoteProviderUID':provider,
+                                       'nace':nace,
+                                       'getRiskfactors':riskfactors,
+                                       'getRemoteLanguage':getRemoteLanguage,
+                                       'getCategoryIndependent':getCategoryIndependent,
+                                       'category':category,
+                                       'country':country,
+                                       'SearchableText':SearchableText,
+                                       'sort_on': 'sortable_title',
+                                       'sort_order':'desc'};
+                         res python:here.portal_catalog(query);
+                         results res;
+                        ">
+         <!--  query: <span tal:replace="query" />  -->
+
+            <strong>
+            <span i18n:domain="plone" i18n:translate="batch_x_items_matching_your_criteria"><span i18n:name="number" tal:content="python:len(results)">234</span> items match your criteria.</span>
+            </strong>
+
+            <div tal:condition="not: results">
+                <p><strong i18n:domain="plone" i18n:translate="description_no_results_found">No results were found.</strong></p>
+            </div>
+
+
+
+        <div tal:condition="results"
+              tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+            <h2><span i18n:translate="label_title">Title</span></h2>
+
+            <dl id="ras_results">
+                <tal:results repeat="result batch">
+                <tal:entry define="result_url result/getURL;
+                                   url string:$result_url/view?searchterm=${searchterm};
+                                   title result/Title|string:;
+                                   catIndependent result/getCategoryIndependent|python:0;
+                                   showclass python:test(catIndependent, 'highlighted', 'default');
+                                   ">
+                    <dt class="default"
+                        tal:attributes="class showclass">
+                        <!--img tal:attributes="src string:${result/getIcon};
+                                                 alt string:Link icon"
+                                 tal:on-error="nothing" /-->
+                        <a href="#" tal:attributes="href url" ><span tal:replace="title" /></a>
+                    </dt>
+                    <dd class="default" 
+                        tal:attributes="class showclass" tal:define="descr result/Description">
+                            <span tal:condition="descr"><span tal:replace="structure descr" /><br /></span>
+                            <a href="#" tal:attributes="href url"><span i18n:translate="box_morelink" i18n:domain="plone">Read more</span></a>
+                            <br clear="all"/>
+                            <span class="discreet"><span tal:omit-tag="" tal:content="python:mockup.getField('dateOfEditing').widget.label">Last Modified:</span> <span tal:on-error="nothing" tal:replace="python:toLocalizedTime(result['getDateOfEditing'])"/></span>
+                            <!--span tal:replace="python:here.portal_languages.getNameForLanguageCode(result.Language)" /-->
+                    </dd>
+                </tal:entry>
+                </tal:results>
+            </dl>
+
+            <br/><br/>
+            <div metal:use-macro="here/batch_macros/macros/navigation" />
+
+        </div>
+
+    </div>
+  </div>
+
+
+</div>
+</html>

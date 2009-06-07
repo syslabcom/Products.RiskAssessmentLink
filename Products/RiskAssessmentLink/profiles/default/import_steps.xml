@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<import-steps>
+
+<import-step 
+    id="RiskAssessmentLink-GS-dependencies" 
+    handler="Products.RiskAssessmentLink.setuphandlers.installGSDependencies"
+    title="Dependend GS profiles for RiskAssessmentLink"
+    version="2008-03-07T10:10:30.982158">
+   <dependency step="plone-final"/>
+   <dependency step="RiskAssessmentLink-QI-dependencies"/>
+   Install Generic Setup profile dependencies for RiskAssessmentLink
+ </import-step>
+
+ <import-step 
+    id="RiskAssessmentLink-QI-dependencies" 
+    handler="Products.RiskAssessmentLink.setuphandlers.installQIDependencies"
+    title="Dependend QI installables for RiskAssessmentLink"
+    version="2008-03-07T10:10:30.982158">
+   Install quickinstaller dependencies for RiskAssessmentLink
+ </import-step>
+ 
+     
+ <import-step 
+    id="RiskAssessmentLink-Install-Vocabularies" 
+    handler="Products.RiskAssessmentLink.setuphandlers.installVocabularies"
+    title="Install Vocabularies for RiskAssessmentLink"
+    version="2008-03-07T10:10:30.982158">
+   <dependency step="RiskAssessmentLink-QI-dependencies"/>
+   Installs the vocabulary files into vocabulary library for RiskAssessmentLink
+ </import-step>
+
+
+ <import-step 
+    id="RiskAssessmentLink-Update-RoleMappings" 
+    handler="Products.RiskAssessmentLink.setuphandlers.updateRoleMappings"
+    title="Update Workflow role mappings for RiskAssessmentLink"
+    version="2008-03-07T10:10:30.982158">
+   <dependency step="RiskAssessmentLink-QI-dependencies"/>
+   updates the workflow role mappings for RiskAssessmentLink
+ </import-step>
+
+ <import-step 
+    id="RiskAssessmentLink-postInstall" 
+    handler="Products.RiskAssessmentLink.setuphandlers.postInstall"
+    title="manual coded post-install for RiskAssessmentLink"
+    version="2008-03-07T10:10:30.982158">
+   <dependency step="RiskAssessmentLink-QI-dependencies"/>
+   manual coded post-install for RiskAssessmentLink
+ </import-step>
+
+<!-- ##code-section ADDITIONALSTEPS -->
+
+<!-- ##/code-section ADDITIONALSTEPS --> 
+
+</import-steps>
+ 

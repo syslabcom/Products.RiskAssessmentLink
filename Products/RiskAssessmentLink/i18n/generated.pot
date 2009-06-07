@@ -1,0 +1,340 @@
+# archgenxml generated POT File
+# unknown <unknown>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: RiskAssessmentLink\n"
+"POT-Creation-Date: Wed Dec 19 14:18:16 2007\n"
+"PO-Revision-Date: Wed Dec 19 14:18:16 2007\n"
+"Last-Translator: unknown <unknown>\n"
+"Language-Team: unknown <unknown>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: RiskAssessmentLink\n"
+
+#. Default: "The contact persons postal address."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_address"
+msgstr ""
+
+#. Default: "Specify the category this provider belongs to"
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_category"
+msgstr ""
+
+#. Default: "The name of the person which people can contact."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_contact_name"
+msgstr ""
+
+#. Default: "Check if applicable"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_contents"
+msgstr ""
+
+#. Default: "The country this provider resides in."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_country"
+msgstr ""
+
+#. Default: "A short descriptive text which describes this provider."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_description"
+msgstr ""
+
+#. Default: "Contact this address for further information"
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_email"
+msgstr ""
+
+#. Default: "The contact persons fax number."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_fax"
+msgstr ""
+
+#. Default: "pick the type of the medium"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_medium"
+msgstr ""
+
+#. Default: "Select one or more values"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_nace"
+msgstr ""
+
+#. Default: "Select one or more entries"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_occupation"
+msgstr ""
+
+#. Default: "The contact persons phone number."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_phone"
+msgstr ""
+
+#. Default: "Select one or more values"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_provider"
+msgstr ""
+
+#. Default: "Specify the category this provider belongs to"
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_providerCategory"
+msgstr ""
+
+#. Default: "Specify the category this provider belongs to"
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_provider_category"
+msgstr ""
+
+#. Default: "The language of the linked contents"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_remoteLanguage"
+msgstr ""
+
+#. Default: "The web address where you can reach the providers homepage."
+#: content/Provider.py
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_remoteUrl"
+msgstr ""
+
+#. Default: "The language of the linked contents"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_remote_language"
+msgstr ""
+
+#. Default: "Select one or more values"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_riskfactors"
+msgstr ""
+
+#. Default: "Select one or more values"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_sector"
+msgstr ""
+
+#. Default: "Can be used without existing knowledge in occupational safety and health."
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_small_company"
+msgstr ""
+
+#. Default: "Can be used without existing knowledge in occupational safety and health."
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_sme"
+msgstr ""
+
+#. Default: "The Title of the Organisation as it should show up in the search results."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_title"
+msgstr ""
+
+#. Default: "The web address where you can reach the providers homepage."
+#: content/Provider.py
+msgid "RiskAssessmentLink_help_url"
+msgstr ""
+
+#. Default: "Also valid for the following tasks. Click to add a new entry."
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_help_workplace"
+msgstr ""
+
+#. Default: "Address"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_address"
+msgstr ""
+
+#. Default: "Applicable Countries"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_applicable_countries"
+msgstr ""
+
+#. Default: "Category"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_category"
+msgstr ""
+
+#. Default: "Contact Name"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_contact_name"
+msgstr ""
+
+#. Default: "Contact_url"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_contact_url"
+msgstr ""
+
+#. Default: "Contents of the Product"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_contents"
+msgstr ""
+
+#. Default: "Country"
+#: content/Provider.py
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_country"
+msgstr ""
+
+#. Default: "Description"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_description"
+msgstr ""
+
+#. Default: "Contact Email"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_email"
+msgstr ""
+
+#. Default: "Fax"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_fax"
+msgstr ""
+
+#. Default: "Medium"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_medium"
+msgstr ""
+
+#. Default: "Sector"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_nace"
+msgstr ""
+
+#. Default: "Name"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_name"
+msgstr ""
+
+#. Default: "Occupation"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_occupation"
+msgstr ""
+
+#. Default: "Organisation"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_organisation"
+msgstr ""
+
+#. Default: "Phone"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_phone"
+msgstr ""
+
+#. Default: "Price (in Euro)"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_price"
+msgstr ""
+
+#. Default: "Provider"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_provider"
+msgstr ""
+
+#. Default: "Provider Category"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_providerCategory"
+msgstr ""
+
+#. Default: "Provider Category"
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_provider_category"
+msgstr ""
+
+#. Default: "Providers"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_providers"
+msgstr ""
+
+#. Default: "Remarks"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_remarks"
+msgstr ""
+
+#. Default: "Remote Language"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_remoteLanguage"
+msgstr ""
+
+#. Default: "Remoteprovider"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_remoteProvider"
+msgstr ""
+
+#. Default: "Url"
+#: content/Provider.py
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_remoteUrl"
+msgstr ""
+
+#. Default: "Remote Language"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_remote_language"
+msgstr ""
+
+#. Default: "Risk Factors"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_riskfactors"
+msgstr ""
+
+#. Default: "Sector"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_sector"
+msgstr ""
+
+#. Default: "Recommended for small companies"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_small_company"
+msgstr ""
+
+#. Default: "Recommended for small companies"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_sme"
+msgstr ""
+
+#. Default: "Title"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_title"
+msgstr ""
+
+#. Default: "Url"
+#: content/RiskAssessmentLink.py
+#: content/Provider.py
+msgid "RiskAssessmentLink_label_url"
+msgstr ""
+
+#. Default: "Workplace/Activity"
+#: content/RiskAssessmentLink.py
+msgid "RiskAssessmentLink_label_workplace"
+msgstr ""
+
+#. Default: "Select..."
+#: filter_macros
+msgid "label_any_language"
+msgstr ""
+
+#. Default: "Country"
+#: filter_macros
+msgid "label_country"
+msgstr ""
+
+#. Default: "Remote Language"
+#: filter_macros
+msgid "label_remote_language"
+msgstr ""
+
+#. Default: "Select..."
+#: filter_macros
+msgid "label_select"
+msgstr ""
+

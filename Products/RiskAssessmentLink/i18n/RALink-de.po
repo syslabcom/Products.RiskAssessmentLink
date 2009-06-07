@@ -1,0 +1,27 @@
+# Wolfgang Thomas <info@syslab.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: RiskAssessmentLink\n"
+"POT-Creation-Date: 2008-05-06 09:19+0000\n"
+"PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
+"Last-Translator: Wolfgang Thomas <info@syslab.com>\n"
+"Language-Team: Wolfgang Thomas <info@syslab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: RALink\n"
+
+
+#: k/content/RiskAssessmentLink.py:205
+#. Default: "Countries"
+msgid "label_country"
+msgstr "Länder"
+
+#: k/content/RiskAssessmentLink.py:215
+#. Default: "Remote language"
+msgid "label_remote_language"
+msgstr "Sprache, in der die Handlungshilfe vorliegt"

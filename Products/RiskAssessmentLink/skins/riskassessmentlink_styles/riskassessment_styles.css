@@ -1,0 +1,52 @@
+#riskassessment-infobox {
+
+}
+#searchfields { height: 1%; background-color: #F3F6FF; border: 1px solid gray !important; padding:5px 10px; clear: both; overflow: hidden; }
+.column1 { float: left; width: 40%; padding-right: 1em; }
+.column2 { float: right; width: 50%; padding-left: 1em; border-left: 1px dotted gray; }
+.fieldSizer { width: 300px; overflow: hidden; }
+.columnTop { width: 100%; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px dotted gray; }
+.columnBottom { width: 100%; padding-top: 10px; margin-top: 30px; border-top: 1px dotted gray; }
+
+#resulttable {background-color: #C4DAFF; border: 1px solid gray !important;  margin:5px 0px; padding:0px; border-collapse: collapse; }
+#resulttable td {margin:0px; padding:5px; }
+#tableheader, #tableheader td {background-color: #F3F6FF; font-weight: bold; padding:5px}
+#publish_button {color: red;}
+#ras_results dt { padding: 0.5em 0 0 0 !important; margin: 0; }
+#ras_results dd { margin: 0; padding: 0.5em 0em !important; border-bottom: 1px dotted gray; }
+#ras_results .highlighted { background: #F3F6FF; }
+
+
+.column1 .field_default input,
+.column1 .field_default select { width: 90%; }
+.column2 .field_default,
+.column2 .field_picker { width: 90%; padding: 2px 0; }
+.column2 .field_default input,
+.column2 .field_default select { width: 90%; }
+.column2 .field_picker input,
+.column2 .field_picker select { width: 75%; }
+.column2 .field_picker .searchButton { width: 10em; }
+
+.column1 .field_picker ul li input,
+.column2 .field_picker ul li input { width: 2em; border: none; background: transparent; }
+.column1 .fieldRequired, .column2 .fieldRequired   {visibility: hidden}
+
+p.quicksearchLabel {float: left; margin-right: 5px}
+
+dl#ral_price {
+    margin:0.75em 0em 0em;
+}
+dl#ral_price dt{
+    margin:0;
+    font-weight: normal;
+    line-height: 1.2em;
+}
+dl#ral_price dd{
+    line-height:1.5em;
+    margin-bottom:1em;
+    margin-left: 0.8em;
+    color: #515151;
+}
+#archetypes-fieldname-description textarea, textarea#form.description {
+    height:33em;
+}

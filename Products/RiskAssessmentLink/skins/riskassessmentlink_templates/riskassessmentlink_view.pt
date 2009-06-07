@@ -1,0 +1,169 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="RiskAssessmentLink">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+           tal:define="kssClassesView context/@@kss_field_decorator_view;
+                       getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                       templateId template/getId;
+                       isMember python:str(member)!='Anonymous User';
+                       ">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading">
+            <metal:field use-macro="python:here.widget('title', mode='view')">
+            Title
+            </metal:field>
+        </h1>
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription">
+            <metal:field use-macro="python:here.widget('description', mode='view')">
+            Description
+            </metal:field>
+        </p>
+        <div class="nutzungshinweise" >
+            <a class="singlelink" 
+               tal:attributes="href string:/${here/portal_languages/getPreferredLanguage}/handlungshilfen/datenbank/nutzung" 
+               i18n:translate="link_nutzungshinweise"
+               onclick="jq('span#body_nutzungshinweise').slideToggle(500);;return false;;">Nutzungshinweise</a>
+               
+            <span style="display:None" 
+                  id="body_nutzungshinweise">  
+                  <span tal:define="preflang here/portal_languages/getPreferredLanguage;
+                                    portal here/portal_url/getPortalObject;
+                                    nutzung python:portal.restrictedTraverse('%s/handlungshilfen/datenbank/nutzung/nutzungshinweise' % preflang, None)"
+                        tal:condition="nutzung"
+                        tal:content="structure nutzung/getText" />           
+            </span>   
+        </div>
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <p class="documentRemarks">
+            <metal:field use-macro="python:here.widget('remarks', mode='view')">
+            Description
+            </metal:field>
+        </p>
+
+
+       <span tal:define="remoteProvider here/getRemoteProvider">
+        <!-- If the Provider isn't published yet, we might get an error -->
+          <tal:condition condition="remoteProvider" tal:on-error="nothing">
+                <tal:block repeat="p remoteProvider">
+                    <p>
+						<a
+						   tal:attributes="href p/getRemoteUrl">
+							<span tal:replace="python:here.getField('remoteProvider').widget.label">
+								Remote Provider
+							</span>:
+                        	<span tal:content="p/Title" />
+						</a>
+					</p>
+                </tal:block>
+          </tal:condition>
+        </span>
+       
+
+       <label i18n:translate="ra_label_characteristics">Characteristics</label>
+
+        <div id="risktable">
+        
+            <div class="riskfield"
+                 tal:condition="python:len(here.getRiskfactors())">
+                <div class="risklabel" 
+                     tal:content="python:here.getField('riskfactors').widget.label">Risk Factors</div>
+                <div class="riskvalue">
+                <metal:field use-macro="python:here.widget('riskfactors', mode='view')">
+                RiskFactors
+                </metal:field>
+                </div>
+                <div class="visualClear"></div>
+
+            </div>
+
+
+            <div class="riskfield"
+                 tal:condition="python:len(here.getNace())">
+                <div class="risklabel" 
+                     tal:content="python:here.getField('nace').widget.label">Sector</div>
+                <div class="riskvalue">
+                    <metal:field use-macro="python:here.widget('nace', mode='view')">
+                    Sector
+                    </metal:field>
+                </div>
+    
+                <div class="visualClear"></div>
+
+            </div>
+            
+
+            <div class="riskfield"
+                 tal:condition="here/getAdditionalKeywords">
+                <div class="risklabel" 
+                     tal:content="python:here.getField('additionalKeywords').widget.label">Affects the following keywords</div>
+
+                <div class="riskvalue">
+                    <ul tal:define="vals here/getAdditionalKeywords">
+                        <li tal:repeat="v vals" tal:content="v/Keywords"></li>
+                    </ul>
+                </div>
+
+                <div class="visualClear"></div>
+
+            </div>
+            
+            <div class="riskfield"
+                 tal:condition="here/getSme">
+                <div class="risklabel" 
+                     tal:content="python:here.getField('sme').widget.label">SME</div>
+
+                <div class="riskvalue">
+                    <span class="plussOK" >&nbsp;</span>
+                </div>
+
+                <div class="visualClear"></div>
+
+            </div>
+        
+            
+            <div class="riskfield"
+                 tal:condition="here/getDateOfEditing">
+                <div class="risklabel" 
+                     tal:content="python:here.getField('dateOfEditing').widget.label">Date of Editing</div>
+
+                <div class="riskvalue">
+                    <tal:field content="python:toLocalizedTime(here.getDateOfEditing())">
+                    DateOfEditing
+                    </tal:field>
+                </div>
+
+                <div class="visualClear"></div>
+
+            </div>
+        
+        </div>
+
+
+
+
+
+
+        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+            show related items if they exist
+        </div>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

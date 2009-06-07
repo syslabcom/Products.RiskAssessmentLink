@@ -1,0 +1,267 @@
+# Wolfgang Thomas <info@syslab.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: RiskAssessmentLink\n"
+"POT-Creation-Date: 2008-05-06 09:19+0000\n"
+"PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
+"Last-Translator: Wolfgang Thomas <info@syslab.com>\n"
+"Language-Team: Wolfgang Thomas <info@syslab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: RiskAssessmentLink\n"
+
+
+#: k/content/RiskAssessmentLink.py:108
+#. Default: "Remarks"
+msgid "ra_remarks_label"
+msgstr "Bemerkungen"
+
+#: k/content/RiskAssessmentLink.py:109
+#. Default: "Here you can add an in-depth comment"
+msgid "ra_remarks_description"
+msgstr "Hier können Sie die Handlungshilfe ausführlich kommentieren. Es gibt keine Textbegrenzung. Auch formatierte Texteingaben sind möglich."
+
+#: k/content/RiskAssessmentLink.py:119
+#. Default: "Addtional keywords"
+msgid "ra_additionalKeywords_label"
+msgstr "Tätigkeit / Arbeitsplatz"
+
+#: k/content/RiskAssessmentLink.py:120
+#. Default: "Here you can add additional keywords"
+msgid "ra_additionalKeywords_description"
+msgstr "Hier können Sie Tätigkeiten und Arbeitsplätze eintragen, für die diese Handlungshilfe relevant ist."
+
+#: k/content/RiskAssessmentLink.py:134
+#. Default: "Sector (NACE Code)"
+msgid "ra_nace_label"
+msgstr "Branche"
+
+#: k/content/RiskAssessmentLink.py:135
+#. Default: "Pick one or more entries"
+msgid "ra_nace_description"
+msgstr "Wählen Sie eine oder mehrere passende Branchen aus. Weitere Unterkataloge können über das Plus-Zeichnen geöffnet werden."
+
+#: k/content/RiskAssessmentLink.py:137
+#. Default: "You can use the Add button to select sectors by browsing the vocabulary. Or you can type in a term or parts of it in the quicksearch field and then click on an item in the results list."
+msgid "ra_nace_quicksearch_help_text"
+msgstr "Sie können Branchen auswählen, indem Sie auf den Hinzufügen-Knopf klicken und in der zur Verfügung stehenden Wertemenge stöbern. Sie können auch einen Begriff, ein Teilwort oder ein numerisches Kürzel in das Schnellsuche-Feld eintippen, und dann auf die gewünschten Branche in der Ergebnisliste klicken."
+
+#: k/content/RiskAssessmentLink.py:144
+#. Default: "Risk factors"
+msgid "ra_riskfactors_label"
+msgstr "Gefährdungsart"
+
+#: k/content/RiskAssessmentLink.py:146
+#. Default: ""
+msgid "ra_riskfactors_description"
+msgstr "Wählen Sie einen oder mehrere passende Gefährdungsfaktoren aus aus. Weitere Unterkataloge können über das Plus-Zeichnen geöffnet werden."
+
+#: k/content/RiskAssessmentLink.py:149
+#. Default: "You can use the Add button to select risk factors by browsing the vocabulary. Or you can type in a term or parts of it in the quicksearch field and then click on an item in the results list."
+msgid "ra_riskfactors_quicksearch_help_text"
+msgstr "Sie können Gefährdungsfaktoren auswählen, indem Sie auf den Hinzufügen-Knopf klicken und in der zur Verfügung stehenden Wertemenge stöbern. Sie können auch einen Begriff, ein Teilwort oder ein numerisches Kürzel in das Schnellsuche-Feld eintippen, und dann auf den gewünschten Gefährdungsfaktor in der Ergebnisliste klicken."
+
+#: k/content/RiskAssessmentLink.py:173
+#. Default: "Medium"
+msgid "ra_medium_label"
+msgstr "Verfügbar als..."
+
+#: k/content/RiskAssessmentLink.py:174
+#. Default: "Pick the type of the medium"
+msgid "ra_medium_description"
+msgstr "Bitte wählen Sie den Medientyp."
+
+#: k/content/RiskAssessmentLink.py:196
+#. Default: "Type / methodology"
+msgid "ra_type_methodology_label"
+msgstr "Typ"
+
+#: k/content/RiskAssessmentLink.py:197
+#. Default: ""
+msgid "ra_type_methodology_description"
+msgstr ""
+
+#: k/content/RiskAssessmentLink.py:185
+#. Default: "Price (in Euro)"
+msgid "ra_price_label"
+msgstr "Kosten (in Euro)"
+
+#: k/content/RiskAssessmentLink.py:186
+#. Default: ""
+msgid "ra_price_description"
+msgstr 'Bei kostenfreien Handlungshilfen bitte nichts eintragen. Die Handlungshilfe erhält in der Ausgabe automatisch den Eintrag "kostenfrei".'
+
+#: k/content/RiskAssessmentLink.py:
+#. Default: "Free for members"
+msgid "ra_free_for_members_label"
+msgstr "Für Mitgliedsbetriebe kostenfrei"
+
+#: k/content/RiskAssessmentLink.py:
+#. Default: ""
+msgid "ra_free_for_members_description"
+msgstr ""
+
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_view.pt:
+#. Default: "Free of charge"
+msgid "ra_free_of_charge"
+msgstr "kostenfrei"
+
+#: k/content/RiskAssessmentLink.py:194
+#. Default: "Recommended for small companies"
+msgid "ra_sme_label"
+msgstr "Für Kleinbetriebe empfohlen"
+
+#: k/content/RiskAssessmentLink.py:195
+#. Default: "Can be used without existing knowledge in occupational safety and health."
+msgid "ra_sme_description"
+msgstr ""
+
+#: k/content/RiskAssessmentLink.py:205
+#. Default: "Countries"
+msgid "ra_countries_label"
+msgstr "Länder"
+
+#: k/content/RiskAssessmentLink.py:206
+#. Default: "Select one or more countries appropriate for this content"
+msgid "ra_countries_description"
+msgstr "Wählen Sie das Land aus, für das diese Handlungshilfe erstellt wurde. Durch Drücken der STR-Taste ist eine Mehrfachauswahl möglich."
+
+#: k/content/RiskAssessmentLink.py:215
+#. Default: "Remote language"
+msgid "ra_remoteLanguage_label"
+msgstr "Verfügbar in..."
+
+#: k/content/RiskAssessmentLink.py:216
+#. Default: "The language of the linked contents"
+msgid "ra_remoteLanguage_deswcription"
+msgstr "Sprache, in der die Handlungshilfe vorliegt"
+
+#: k/content/RiskAssessmentLink.py:233
+#. Default: "Provider of this information"
+msgid "ra_remoteProvider_label"
+msgstr "Anbieter"
+
+#: k/content/RiskAssessmentLink.py:234
+#. Default: ""
+msgid "ra_remoteProvider_description"
+msgstr ""
+
+#: k/content/RiskAssessmentLink.py:245
+#. Default: "Category independent"
+msgid "ra_categoryIndependent_label"
+msgstr "Allgemeine Handlungshilfen"
+
+#: k/content/RiskAssessmentLink.py:246
+#. Default: "Description for categoryIndependent"
+msgid "ra_categoryIndependent_description"
+msgstr "Wählen Sie dieses Kästchen an, wenn Sie Ihre Suche auf allgemeine und einführende Handlunshilfen beschränken möchten."
+
+#: k/content/RiskAssessmentLink.py:63
+#. Default: "Short description (3-8 lines)"
+msgid "ra_description_label"
+msgstr "Kurzbeschreibung (ca 3-8 Textzeilen)"
+
+#: k/content/RiskAssessmentLink.py:64
+#. Default: "Please enter a short descriptive text"
+msgid "ra_description_description"
+msgstr "Dieser Text soll die Handlungshilfe kurz und prägnant beschreiben. Er erscheint u.a. in der Liste der Suchergebnisse unterhalb des Titels. Es werden 3-8 Textzeilen empfohlen."
+
+#: k/content/RiskAssessmentLink.py:75
+#. Default: "URL"
+msgid "ra_remoteUrl_label"
+msgstr "Internetadresse"
+
+#: k/content/RiskAssessmentLink.py:76
+#. Default: "The web address of the remote information."
+msgid "ra_remoteUrl_description"
+msgstr "Vollständige Webadresse, unter der die Handlungshilfe erreichbar ist, z.B. http://www.baua.de/de/Themen-von-A-Z/Gefahrstoffe/EMKG/EMKG.html"
+
+#: k/content/RiskAssessmentLink.py:84
+#. Default: "Date of last editing"
+msgid "ra_dateOfEditing_label"
+msgstr "Bearbeitungsdatum"
+
+#: k/content/RiskAssessmentLink.py:85
+#. Default: "Enter the date when the action guideline was last updated."
+msgid "ra_dateOfEditing_description"
+msgstr "Bitte tragen Sie das Datum der letzten inhaltlichen Überarbeitung der Handlungshilfe ein."
+
+#: k/content/RiskAssessmentLink.py:93
+#. Default: "Risk assessment contents"
+msgid "ra_contents_label"
+msgstr "Handlungshilfe enthält..."
+
+#: k/content/RiskAssessmentLink.py:94
+#. Default: "Check if applicable"
+msgid "ra_contents_description"
+msgstr "Welche der folgenden Schritte werden durch diese Handlungshilfe abgedeckt (siehe Leitlinie Gefährdungsbeurteilung und Dokumentation)"
+
+#: k/skins/riskassessmentlink_templates/portlet_riskassessmentlink_details.pt:16
+#. Default: "Details"
+msgid "box_details"
+msgstr "Details"
+
+#: k/skins/riskassessmentlink_templates/portlet_riskassessmentlink_details.pt:28
+#. Default: "Go to action help"
+msgid "link_to_actionhelp"
+msgstr "Zur Handlungshilfe"
+
+#: k/skins/riskassessmentlink_templates/portlet_riskassessmentlink_details.pt:53
+#. Default: "Go to provider"
+msgid "link_to_provider"
+msgstr "Zum Anbieter"
+
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:137
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:178
+#. Default: "Title"
+msgid "label_title"
+msgstr "Titel"
+
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:63
+#. Default: "Detailed Search"
+msgid "heading_detail_search"
+msgstr "Detailsuche"
+
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:81
+#. Default: ""
+#.  "Filter your search by selecting one or more of the filters.\n"
+#.  "                    You can always remove any filter again by selecting the empty entry or by clicking the Reset button."
+msgid "help_db_filter"
+msgstr "Filtern Sie Ihre Suchergebnisse, indem Sie einen oder mehrere der Filterkriterien auswählen. Sie können einen gewählten Filter dadurch entfernen, indem Sie den leeren Eintrag auswählen oder indem Sie den Zurücksetzen Knopf benutzen."
+
+#. Default "Die vollständige Bearbeitung des Datensatzes besteht aus den folgenden 4 Formularseiten"
+#: /gfb/theme/browser/editing_help.pt
+msgid "ra_edit_general_help"
+msgstr "Die vollständige Bearbeitung des Datensatzes besteht aus den folgenden 4 Formularseiten:"
+
+msgid "ra_continue_to_guideline"
+msgstr "Weiter zur Handlungshilfe"
+
+msgid "portlet_radetails_title"
+msgstr "Zur Handlungshilfe"
+
+msgid "portlet_radetails_available_as"
+msgstr "verfügbar als..."
+
+msgid "ra_label_characteristics"
+msgstr "Gültigkeitsmerkmale"
+
+msgid "label_any_language"
+msgstr "Beliebige Sprache"
+
+msgid "label_country"
+msgstr "Infos gelten für"
+
+msgid "label_select"
+msgstr "Bitte wählen..."
+
+msgid "label_remote_language"
+msgstr "Sprachfassung"

@@ -1,0 +1,99 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="RiskAssessmentLink">
+
+<body>
+
+<!-- The Riskassessment Link Details Box -->
+
+<div metal:define-macro="portlet"
+     tal:condition="python: context.portal_type=='RiskAssessmentLink'"
+     tal:define="ltool nocall:here/portal_languages;
+            lang_info ltool/getAvailableLanguageInformation;">
+
+<dl class="portlet" id="portlet-riskassessmentlink">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <div i18n:translate="portlet_radetails_title"
+           class="tile">About the procedural guideline
+         </div>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+        <p tal:define="field python:here.getField('type_methodology');
+            vocab python:field.Vocabulary(here);
+            vals here/getType_methodology;
+            vals python:[v for v in vals if v!='']"><b 
+                tal:content="python:', '.join([vocab.getValue(v) for v in vals])"></b></p>
+
+        <p tal:content="python:here.getField('medium').widget.label">Available as...</p>
+         <ul class="visualMarker"
+            tal:define="field python:here.getField('medium');
+                        vocab python:field.Vocabulary(here);
+                        vals here/getMedium;
+                        vals python:[v for v in vals if v!='']">
+                 
+            <li tal:repeat="v vals" tal:content="python:vocab.getValue(v)"></li>
+          </ul>
+
+         <dl id="ral_price" tal:define="price here/getPrice | nothing">
+           <dt tal:content="python:here.getField('price').widget.label">Price</dt>
+           <dd tal:condition="price">
+                <span tal:replace="price" />&nbsp;&euro;&nbsp;
+                    <span tal:condition="here/getFree_for_members" tal:omit-tag="">*
+                </span>
+                <ul style="list-style-image: url(ico_asterisk.gif); color:#666;" tal:condition="here/getFree_for_members">
+                    <li><span tal:omit-tag="" i18n:domain="gfb" i18n:translate="label_free_for_members">Free for members</span></li>
+                </ul>
+           </dd>
+           <dd tal:condition="not:price">
+            <span i18n:translate="label_free" i18n:domain="gfb" />
+           </dd>
+          </dl>
+
+
+            <p tal:content="python:here.getField('remoteLanguage').widget.label">Available in...</p>
+            <ul class="visualMarker"
+                tal:define="field python:here.getField('remoteLanguage');
+                vocab python:field.Vocabulary(here);
+                vals here/getRemoteLanguage;
+                vals python:[v for v in vals if v!='']">
+            <li tal:repeat="lang vals"
+                tal:content="python:lang_info.has_key(lang) and lang_info[lang]['native'] 
+                or vocab.getValue(lang)"></li>
+        </ul>
+
+        <div id="link_to_tool">
+            <a i18n:translate="ra_continue_to_guideline"
+            tal:attributes="href here/getRemoteUrl">Continue to procedural guideline</a>
+        </div>
+    </dd>
+
+    <dt class="portletHeader">
+        <div 
+           class="tile" tal:content="python:here.getField('contents').widget.label"></div>
+    </dt>
+      <dd class="portletItem">
+         <ul class="visualMarker"
+                tal:define="field python:here.getField('contents');
+                vocab python:field.Vocabulary(here);
+                vals here/getContents;
+                vals python:[v for v in vals if v!='']">
+            <li tal:repeat="v vocab" tal:content="python:vocab.getValue(v)"
+                tal:attributes="class python:v in vals and 'plussOK' or 'minusNOK'"></li>
+        </ul>
+        </dd>
+    <dd class="portletFooter">
+            <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
+
+</div>
+
+</body>
+
+</html>
