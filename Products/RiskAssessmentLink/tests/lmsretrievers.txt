@@ -6,7 +6,7 @@ RiskAssessmentLink LMS Retriever
     
         >>> _ = self.folder.invokeFactory('RiskAssessmentLink', 'myral')
         >>> myob = getattr(self.folder, 'myral')
-        >>> myob.setText('This is <a href="google.com">a link</a>.')
+        >>> myob.setDescription('This is <a href="google.com">a link</a>.')
         >>> myob.setRemoteUrl('http://osha.europa.eu')
         >>> retrieve_manager = self.portal.portal_linkchecker.retrieving
            
