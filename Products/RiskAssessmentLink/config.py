@@ -42,11 +42,11 @@ product_globals = globals()
 
 # Dependencies of Products to be installed by quick-installer
 # override in custom configuration
-DEPENDENCIES = []
+DEPENDENCIES = ['ATVocabularyManager']
 
 # Dependend products - not quick-installed - used in testcase
 # override in custom configuration
-PRODUCT_DEPENDENCIES = []
+PRODUCT_DEPENDENCIES = ['gocept.linkchecker']
 
 ##code-section config-bottom #fill in your manual code here
 DEFAULT_PROVIDER = "European Agency for Safety and Health at Work"
