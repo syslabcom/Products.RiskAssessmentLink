@@ -14,7 +14,7 @@ def test_suite():
         # Demonstrate the main content types
         ztc.ZopeDocFileSuite(
             'README.txt', package='Products.RiskAssessmentLink',
-            test_class=base.FunctionalTestCase,
+            test_class=base.RiskAssessmentLinkFunctionalTestCase,
             optionflags=doctest.REPORT_ONLY_FIRST_FAILURE |
                 doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS),
 
