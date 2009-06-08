@@ -1,16 +1,10 @@
 Introduction
 ============
 
-This is a full-blown functional test. The emphasis here is on testing what
-the user may input and see, and the system is largely tested as a black box.
-We use PloneTestCase to set up this test as well, so we have a full Plone site
-to play with. We *can* inspect the state of the portal, e.g. using 
-self.portal and self.folder, but it is often frowned upon since you are not
-treating the system as a black box. Also, if you, for example, log in or set
-roles using calls like self.setRoles(), these are not reflected in the test
-browser, which runs as a separate session.
+This content type can be used to link to an external resources on Risk Assessment. Several fields offer the possibility to enter meta-information about these resources.
 
-Being a doctest, we can tell a story here.
+Boilerplate
+===========
 
 First, we must perform some setup. We use the testbrowser that is shipped
 with Five, as this provides proper Zope 2 integration. Most of the 
@@ -52,5 +46,18 @@ And we ensure that we get the friendly logged-in message:
     True
 
 
--*- extra stuff goes here -*-
+
+Adding a Risk Assessment Link
+=============================
+
+We add a Risk Assessment Link and make sure the id is set correctly.
+    >>> _ = self.folder.invokeFactory(type_name='RiskAssessmentLink', id='myralink')
+    >>> myralink = self.folder.myralink
+    >>> myralink.getId()
+	'myralink'
+
+For good measure, we also set a title and test for it.	
+	>>> myralink.setTitle('My Risk Assessment Link')
+	>>> myralink.Title()
+	'My Risk Assessment Link'
 
