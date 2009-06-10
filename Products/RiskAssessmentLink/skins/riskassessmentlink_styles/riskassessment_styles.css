@@ -33,20 +33,14 @@
 
 p.quicksearchLabel {float: left; margin-right: 5px}
 
-dl#ral_price {
-    margin:0.75em 0em 0em;
+#ral_free {
+    list-style-image: url(ico_asterisk.gif) !important; 
+    color: #666;
 }
-dl#ral_price dt{
-    margin:0;
-    font-weight: normal;
-    line-height: 1.2em;
+#ral_price {
+    padding-bottom: 1em;
 }
-dl#ral_price dd{
-    line-height:1.5em;
-    margin-bottom:1em;
-    margin-left: 0.8em;
-    color: #515151;
-}
+
 #archetypes-fieldname-description textarea, textarea#form.description {
     height:33em;
 }

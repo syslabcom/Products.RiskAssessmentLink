@@ -208,7 +208,7 @@ schema = Schema((
         name='price',
         languageIndependent=True,
         widget=StringField._properties['widget'](
-            label=_(u'ra_price_label', default="Price (in Euro)"),
+            label=_(u'ra_price_label', default="Price"),
             description=_(u'ra_price_description', default=u'Please leave blank if free of charge.'),
             rows=10,
         ),

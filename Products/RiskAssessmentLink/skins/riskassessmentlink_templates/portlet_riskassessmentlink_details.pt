@@ -36,25 +36,35 @@
                         vals python:[v for v in vals if v!='']">
                  
             <li tal:repeat="v vals" tal:content="python:vocab.getValue(v)"></li>
-          </ul>
 
-         <dl id="ral_price" tal:define="price here/getPrice | nothing">
-           <dt tal:content="python:here.getField('price').widget.label">Price</dt>
-           <dd tal:condition="price">
-                <span tal:replace="price" />&nbsp;&euro;&nbsp;
-                    <span tal:condition="here/getFree_for_members" tal:omit-tag="">*
-                </span>
-                <ul style="list-style-image: url(ico_asterisk.gif); color:#666;" tal:condition="here/getFree_for_members">
-                    <li><span tal:omit-tag="" i18n:domain="gfb" i18n:translate="label_free_for_members">Free for members</span></li>
-                </ul>
-           </dd>
-           <dd tal:condition="not:price">
-            <span i18n:translate="label_free" i18n:domain="gfb" />
-           </dd>
-          </dl>
+			<li id="ral_price" tal:define="price here/getPrice | nothing">
+	            <span tal:replace="python:here.getField('price').widget.label">Price</span>:
+	            
+				<tal:block condition="price">
+	                <span tal:replace="price" />&nbsp;&euro;&nbsp;
+	                    <span tal:condition="here/getFree_for_members" tal:omit-tag="">*
+	                </span>
+	           </tal:block>
+	
+	           <tal:block condition="not:price">
+					<span i18n:translate="label_free" i18n:domain="gfb" />
+	           </tal:block>
+	
+	         </li>
 
+        </ul>
 
-            <p tal:content="python:here.getField('remoteLanguage').widget.label">Available in...</p>
+		<ul id="ral_free" tal:condition="here/getFree_for_members">
+        	<li>
+				<span tal:omit-tag="" 
+					i18n:domain="gfb" 
+					i18n:translate="label_free_for_members">
+					Free for members
+				</span>
+			</li>
+        </ul>
+
+        <p tal:content="python:here.getField('remoteLanguage').widget.label">Available in...</p>
             <ul class="visualMarker"
                 tal:define="field python:here.getField('remoteLanguage');
                 vocab python:field.Vocabulary(here);
@@ -66,7 +76,7 @@
         </ul>
 
         <div id="link_to_tool">
-            <a i18n:translate="ra_continue_to_guideline"
+            <a i18n:translate="ra_continue_to_guideline" target="_new"
             tal:attributes="href here/getRemoteUrl">Continue to procedural guideline</a>
         </div>
     </dd>

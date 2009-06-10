@@ -87,9 +87,9 @@ msgid "ra_type_methodology_description"
 msgstr ""
 
 #: k/content/RiskAssessmentLink.py:185
-#. Default: "Price (in Euro)"
+#. Default: "Price"
 msgid "ra_price_label"
-msgstr "Kosten (in Euro)"
+msgstr "Kosten"
 
 #: k/content/RiskAssessmentLink.py:186
 #. Default: ""
