@@ -40,6 +40,10 @@ p.quicksearchLabel {float: left; margin-right: 5px}
 #ral_price {
     padding-bottom: 1em;
 }
+.active {
+    background: #E5E6E8  url(lc_active.gif) no-repeat 10px 8px !important;
+}
+
 
 #archetypes-fieldname-description textarea, textarea#form.description {
     height:33em;

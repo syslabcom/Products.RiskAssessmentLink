@@ -14,7 +14,17 @@
                        templateId template/getId;
                        isMember python:str(member)!='Anonymous User';
                        ">
+<script language="javascript">
+jq(document).ready(function(){
+	jq('.toggle_container').hide();
 
+	//Slide up and down & toggle the Class on click
+	jq('.nutzungshinweise').click(function(){
+		jq(this).toggleClass('active');
+		jq('.toggle_container').slideToggle('slow');
+	});
+});
+</script>
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 class="documentFirstHeading">
@@ -31,12 +41,10 @@
             </metal:field>
         </p>
         <div class="nutzungshinweise" >
-            <a class="singlelink" 
-               tal:attributes="href string:/${here/portal_languages/getPreferredLanguage}/handlungshilfen/datenbank/nutzung" 
-               i18n:translate="link_nutzungshinweise"
-               onclick="jq('span#body_nutzungshinweise').slideToggle(500);;return false;;">Nutzungshinweise</a>
+            <a class="singlelink trigger" 
+               i18n:translate="link_nutzungshinweise">Nutzungshinweise</a>
                
-            <span style="display:None" 
+            <span class="toggle_container"
                   id="body_nutzungshinweise">  
                   <span tal:define="preflang here/portal_languages/getPreferredLanguage;
                                     portal here/portal_url/getPortalObject;
