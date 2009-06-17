@@ -8,11 +8,11 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main"
+	
+	    <tal:main-macro metal:define-macro="main"
            tal:define="kssClassesView context/@@kss_field_decorator_view;
                        getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                        templateId template/getId;
-                       isMember python:str(member)!='Anonymous User';
                        ">
 <script language="javascript">
 jq(document).ready(function(){
@@ -63,7 +63,6 @@ jq(document).ready(function(){
 
 
        <span tal:define="remoteProvider here/getRemoteProvider">
-        <!-- If the Provider isn't published yet, we might get an error -->
           <tal:condition condition="remoteProvider" tal:on-error="nothing">
                 <tal:block repeat="p remoteProvider">
                     <p>
@@ -128,18 +127,6 @@ jq(document).ready(function(){
 
             </div>
             
-            <div class="riskfield"
-                 tal:condition="here/getSme">
-                <div class="risklabel" 
-                     tal:content="python:here.getField('sme').widget.label">SME</div>
-
-                <div class="riskvalue">
-                    <span class="plussOK" >&nbsp;</span>
-                </div>
-
-                <div class="visualClear"></div>
-
-            </div>
         
             
             <div class="riskfield"
@@ -156,7 +143,15 @@ jq(document).ready(function(){
                 <div class="visualClear"></div>
 
             </div>
-        
+
+            <div class="riskfield"
+                 tal:condition="here/getSme">
+                <div class="risklabel" 
+                     tal:content="python:here.getField('sme').widget.label">SME</div>
+
+                <div class="visualClear"></div>
+
+            </div>        
         </div>
 
 
