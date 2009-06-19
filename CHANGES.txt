@@ -1,12 +1,17 @@
 Products.RiskAssessmentLink Changelog
 =====================================
 
-Products.RiskAssessmentLink 1.2 (unreleased)
+Products.RiskAssessmentLink 1.2 (2009-06-19)
 --------------------------------------------
+
 - changed the appearance of the portlet (price) [pilz]
+
 - removed text (in Euro) [pilz]
+
 - Open "Weiter zur Handlungshilfe" in a new window [pilz]
+
 - Nutzungshinweise now also have an icon change on click [pilz]
+
 - Changed the display of the risk assessment link properties shown below the content [pilz]
 
 Products.RiskAssessmentLink 1.1 (2009-05-12)
