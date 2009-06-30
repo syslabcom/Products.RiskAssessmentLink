@@ -410,11 +410,18 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
 
     def getFilteredLanguages(self):
         """ return the languages supported in the site """
+        ppt = getToolByName(self, 'portal_properties')
+        sps = ppt.site_properties
         plt = getToolByName(self, 'portal_languages')
-        langs = plt.listSupportedLanguages()
-        L = []
-        for l in langs:
-            L.append((l[0], translate(l[1]) ))
+        REMOTE_LANGUAGES = sps.getProperty('REMOTE_LANGUAGES', None)
+        L = list()
+        if REMOTE_LANGUAGES:
+            for l in REMOTE_LANGUAGES:
+                L.append((l, plt.getNameForLanguageCode(l)))
+        else:      
+            langs = plt.listSupportedLanguages()
+            for l in langs:
+                L.append((l[0], translate(l[1]) ))
         L.sort()
         return DisplayList(L)
 

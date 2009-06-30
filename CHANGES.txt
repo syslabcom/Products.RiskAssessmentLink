@@ -1,6 +1,11 @@
 Products.RiskAssessmentLink Changelog
 =====================================
 
+Products.RiskAssessmentLink 1.2.1 (2009-06-30)
+----------------------------------------------
+
+- added possibility to define site_property REMOTE_LANGUAGES (thomasw)
+
 Products.RiskAssessmentLink 1.2 (2009-06-19)
 --------------------------------------------
 
