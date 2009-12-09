@@ -41,7 +41,7 @@ jq(document).ready(function(){
             </metal:field>
         </p>
         <div class="nutzungshinweise" >
-            <a class="singlelink trigger" 
+            <a class="singlelink trigger" i18n:domain="gfb"
                i18n:translate="link_nutzungshinweise">Nutzungshinweise</a>
                
             <span class="toggle_container"
