@@ -1,10 +1,12 @@
 Products.RiskAssessmentLink Changelog
 =====================================
 
-1.2.5 (unreleased)
+1.2.5 (2009-12-10)
 ------------------
 
-- Nothing changed yet.
+- we've been coding at cross-purposes. Somebody broke showing the translated providers. 
+  This is my hack-fix: On translated RA Links, I return the canonical and the 
+  translated provider's UID. (thomasw)
 
 
 1.2.4 (2009-12-10)
