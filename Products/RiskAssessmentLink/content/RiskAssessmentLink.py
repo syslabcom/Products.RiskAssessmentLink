@@ -426,9 +426,17 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
         return DisplayList(L)
 
     def getRemoteProviderUID(self):
-        """ return the UID of the provider, stored via reference. Used for indexing """
-        f = self.getField('remoteProvider')
-        return f.getRaw(self)
+        """ return the UID of the provider, stored via reference. Used for indexing.
+            Intelligent enough to return correct language version
+        """
+        lang = self.Language()
+        uid = list()
+        providers = self.getRemoteProvider()
+        for provider in providers:
+            provider = provider.getTranslation(lang) or provider
+            uid.append(provider.UID())
+        return uid
+
 
 
 registerType(RiskAssessmentLink, PROJECTNAME)
