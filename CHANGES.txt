@@ -4,7 +4,7 @@ Products.RiskAssessmentLink Changelog
 1.2.3 (2009-12-10)
 ------------------
 
-- failed release? retry (thomasw)
+- failed release due to inconsistent title level in the docs - retry...(thomasw)
 
 
 1.2.2 (2009-12-10)
