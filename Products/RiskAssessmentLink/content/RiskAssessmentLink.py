@@ -433,8 +433,12 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
         uid = list()
         providers = self.getRemoteProvider()
         for provider in providers:
-            provider = provider.getTranslation(lang) or provider
             uid.append(provider.UID())
+            if provider.Language()!=lang:
+                trans = provider.getTranslation(lang)
+                if trans:
+                    uid.append(trans.UID())
+
         return uid
 
 
