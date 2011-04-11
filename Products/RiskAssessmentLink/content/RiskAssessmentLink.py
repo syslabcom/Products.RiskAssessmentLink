@@ -342,6 +342,8 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
         """
         """
         provRes = self._validProviders()
+        plt = getToolByName(self, 'portal_languages')
+        lang = plt.getPreferredLanguage()
         pvt = getToolByName(self, 'portal_vocabularies')
         VOCAB = pvt.get('provider_category')
         results = dict()
@@ -351,8 +353,18 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
             for catId, catName in DL.items():
                 results[catId] = (catName, dict())
             for res in provRes:
+                if res.Language != lang:
+                    try:
+                        ob = res.getObject()
+                    except:
+                        # stale catalog entry
+                        continue
+                    ob = ob.getTranslation(lang) or ob
+                    title = ob.Title()
+                else:
+                    title = res.Title
                 if res.getProvider_category in cats:
-                    results[res.getProvider_category][1][res.UID] = (res.Title, None)
+                    results[res.getProvider_category][1][res.UID] = (title, None)
         else:
             for res in provRes:
                 results[res.UID] = (res.Title, None)
