@@ -1,11 +1,11 @@
 Products.RiskAssessmentLink Changelog
 =====================================
 
-y (unreleased)
---------------
+1.2.6 (2011-04-11)
+------------------
 
-- Nothing changed yet.
-
+- When showing the list of providers, be sure to use the translated title,
+  if present [thomasw] #2619
 
 1.2.5 (2009-12-10)
 ------------------
