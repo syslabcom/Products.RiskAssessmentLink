@@ -12,7 +12,6 @@ class DBFilterView(BrowserView):
     """
 
     template = ViewPageTemplateFile('dbfilter.pt')
-    template.id = "radb_filter"
 
     def __call__(self):
         #self.request.set('disable_border', True)
