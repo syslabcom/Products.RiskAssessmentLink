@@ -135,7 +135,7 @@ jq(document).ready(function(){
                      tal:content="python:here.getField('dateOfEditing').widget.label">Date of Editing</div>
 
                 <div class="riskvalue">
-                    <tal:field content="python:toLocalizedTime(here.getDateOfEditing())">
+                    <tal:field content="python:context.toLocalizedTime(here.getDateOfEditing())">
                     DateOfEditing
                     </tal:field>
                 </div>

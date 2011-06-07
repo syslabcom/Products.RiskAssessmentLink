@@ -14,6 +14,7 @@ __docformat__ = 'plaintext'
 
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
+from plone.indexer.decorator import indexer
 
 try:
     from Products.LinguaPlone.public import *
@@ -458,6 +459,8 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
 registerType(RiskAssessmentLink, PROJECTNAME)
 # end of class RiskAssessmentLink
 
-
+@indexer(interfaces.IRiskAssessmentLink)
+def getRiskfactors(obj):
+    return obj.restrictedTraverse('@@getVocabularyPath')('riskfactors')
 
 

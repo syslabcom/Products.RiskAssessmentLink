@@ -31,4 +31,6 @@
         <adapter factory=".adapter.DataExtractor.DataExtractor" />
   </configure>
 
+  <adapter name="getRiskfactors" factory=".content.RiskAssessmentLink.getRiskfactors" />
+
 </configure>
