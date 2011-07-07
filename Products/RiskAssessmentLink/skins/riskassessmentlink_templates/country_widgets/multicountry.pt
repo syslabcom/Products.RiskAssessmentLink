@@ -21,8 +21,7 @@
 		    tal:define="vocab python:field.Vocabulary(here); value python:value or []">
             <select multiple="multiple" size="10"
                     tal:attributes="name fieldName;
-                                    id fieldName;
-                                    tabindex tabindex/next;">
+                                    id fieldName;">
               <optgroup tal:repeat="area python: here.portal_countryutils.listAreas(omit=widget.omitCountries)"
                         tal:attributes="label area/name"
                         i18n:attributes="label">

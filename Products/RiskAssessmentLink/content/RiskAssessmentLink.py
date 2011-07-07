@@ -15,6 +15,7 @@ __docformat__ = 'plaintext'
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
 from plone.indexer.decorator import indexer
+from collective.dynatree.atwidget import DynatreeWidget
 
 try:
     from Products.LinguaPlone.public import *
@@ -47,6 +48,9 @@ from Products.CMFPlone import PloneMessageFactory as _plone_message_factory
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.CMFCore.utils import getToolByName
 from zope.i18n import translate
+
+from zope.component import getUtility
+from gfb.policy.interfaces import IVocabularyUtility
 
 schema = Schema((
 
@@ -140,11 +144,11 @@ schema = Schema((
         required=True,
         languageIndependent=True,
         multiValued=True,
-        widget=VocabularyPickerWidget(
-            level=3,
+        vocabulary=NamedVocabulary("NACE"),
+        widget=DynatreeWidget(
+            selectMode=3,
             label=_(u'ra_nace_label', default=u"Sector (NACE Code)"),
             description=_(u'ra_nace_description', default='Pick one or more entries'),
-            vocabulary="NACE",
 #            quicksearch_help_text=_(u'ra_nace_quicksearch_help_text', default="You can use the Add button to select sectors by browsing the vocabulary. Or you can type in a term or parts of it in the quicksearch field and then click on an item in the results list."),
         ),
         schemata='Sector',
@@ -152,11 +156,10 @@ schema = Schema((
     LinesField(
         name='riskfactors',
         required=True,
-        widget=VocabularyPickerWidget(
+        widget=DynatreeWidget(
             label=_(u'ra_riskfactors_label', default=u"Risk factors"),
-            vocabulary='RiskFactors',
             description=_(u'ra_riskfactors_description', default=u''),
-            level=2,
+            selectMode=3,
 #            quicksearch_help_text=_(u'ra_riskfactors_quicksearch_help_text', default="You can use the Add button to select risk factors by browsing the vocabulary. Or you can type in a term or parts of it in the quicksearch field and then click on an item in the results list."),
         ),
         languageIndependent=True,
@@ -262,15 +265,7 @@ schema = Schema((
     ReferenceField(
         name='remoteProvider',
         languageIndependent=True,
-        widget=VocabularyPickerWidget(
-            modes=('view', 'edit', 'search'),
-            visible=dict(edit="visible", view='invisible', search='visible'),
-            level=2,
-            vocabulary='getProviderVocabulary',
-            hide_id=True,
-            nodesHaveCBs=0,
-            quicksearch_vocabulary='getProviderQuicksearch',
-            sortAlphabetically=1,
+        widget=ReferenceWidget(
             label=_(u'ra_remoteProvider_label', default=u'Provider of this information'),
             description=_(u'ra_remoteProvider_description', default=u''),
             condition="python:object.REQUEST.get('mode', '')=='search' or object.portal_membership.getAuthenticatedMember().allowed(object, ['Manager'])",
@@ -278,7 +273,6 @@ schema = Schema((
         allowed_types=('Provider',),
         relationship="provider_of",
         multiValued=True,
-        vocabulary='getProviderVocabulary',
     ),
     BooleanField(
         name='categoryIndependent',
