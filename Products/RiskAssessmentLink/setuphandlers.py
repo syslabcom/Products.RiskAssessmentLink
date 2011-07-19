@@ -124,10 +124,10 @@ def installVocabularies(context):
     site = context.getSite()
     # Create vocabularies in vocabulary lib
     atvm = getToolByName(site, ATVOCABULARYTOOL)
-    vocabmap = {'RiskAssessmentContents': 'VdexVocabulary',
-         'RiskFactors': 'VdexVocabulary',
-         'RiskassessmentMedia' : 'VdexVocabulary',
-          'RiskassessmentTypeMethodology' : 'VdexVocabulary',
+    vocabmap = {'RiskAssessmentContents': 'VdexFileVocabulary',
+         'RiskFactors': 'VdexFileVocabulary',
+         'RiskassessmentMedia' : 'VdexFileVocabulary',
+          'RiskassessmentTypeMethodology' : 'VdexFileVocabulary',
         }
 
     for vocabname in vocabmap.keys():
