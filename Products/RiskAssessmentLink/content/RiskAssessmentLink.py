@@ -146,7 +146,7 @@ schema = Schema((
         multiValued=True,
         vocabulary=NamedVocabulary("NACE"),
         widget=DynatreeWidget(
-            selectMode=3,
+            selectMode=2,
             label=_(u'ra_nace_label', default=u"Sector (NACE Code)"),
             description=_(u'ra_nace_description', default='Pick one or more entries'),
 #            quicksearch_help_text=_(u'ra_nace_quicksearch_help_text', default="You can use the Add button to select sectors by browsing the vocabulary. Or you can type in a term or parts of it in the quicksearch field and then click on an item in the results list."),
@@ -159,7 +159,7 @@ schema = Schema((
         widget=DynatreeWidget(
             label=_(u'ra_riskfactors_label', default=u"Risk factors"),
             description=_(u'ra_riskfactors_description', default=u''),
-            selectMode=3,
+            selectMode=2,
 #            quicksearch_help_text=_(u'ra_riskfactors_quicksearch_help_text', default="You can use the Add button to select risk factors by browsing the vocabulary. Or you can type in a term or parts of it in the quicksearch field and then click on an item in the results list."),
         ),
         languageIndependent=True,
