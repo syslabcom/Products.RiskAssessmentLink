@@ -20,14 +20,14 @@
  </import-step>
  
      
- <import-step 
+ <!-- <import-step 
     id="RiskAssessmentLink-Install-Vocabularies" 
     handler="Products.RiskAssessmentLink.setuphandlers.installVocabularies"
     title="Install Vocabularies for RiskAssessmentLink"
     version="2008-03-07T10:10:30.982158">
    <dependency step="RiskAssessmentLink-QI-dependencies"/>
    Installs the vocabulary files into vocabulary library for RiskAssessmentLink
- </import-step>
+ </import-step> -->
 
 
  <import-step 
