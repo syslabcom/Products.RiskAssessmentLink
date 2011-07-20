@@ -453,8 +453,3 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
 registerType(RiskAssessmentLink, PROJECTNAME)
 # end of class RiskAssessmentLink
 
-@indexer(interfaces.IRiskAssessmentLink)
-def getRiskfactors(obj):
-    return obj.restrictedTraverse('@@getVocabularyPath')('riskfactors')
-
-
