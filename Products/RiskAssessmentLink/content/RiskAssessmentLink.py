@@ -1,16 +1,4 @@
 # -*- coding: utf-8 -*-
-#
-# File: RiskAssessmentLink.py
-#
-# Copyright (c) 2008 by []
-# Generator: ArchGenXML Version 2.0-beta11
-#            http://plone.org/products/archgenxml
-#
-# GNU General Public License (GPL)
-#
-
-__author__ = """unknown <unknown>"""
-__docformat__ = 'plaintext'
 
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
@@ -44,6 +32,7 @@ from Products.Archetypes.Widget import SelectionWidget
 from Products.Archetypes.utils import DisplayList
 from Products.RiskAssessmentLink import RAMessageFactory as _
 from Products.CMFPlone import PloneMessageFactory as _plone_message_factory
+from Products.LinguaPlone.browser.vocabularies import AllContentLanguageVocabularyFactory
 
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.CMFCore.utils import getToolByName
@@ -421,14 +410,15 @@ class RiskAssessmentLink(BaseContent, ATCTContent, BrowserDefaultMixin):
         sps = ppt.site_properties
         plt = getToolByName(self, 'portal_languages')
         REMOTE_LANGUAGES = sps.getProperty('REMOTE_LANGUAGES', None)
-        L = list()
+
         if REMOTE_LANGUAGES:
-            for l in REMOTE_LANGUAGES:
-                L.append((l, plt.getNameForLanguageCode(l)))
+            L = list()
+            vocab = AllContentLanguageVocabularyFactory(self)
+            for lang in REMOTE_LANGUAGES:
+                if lang in vocab:
+                    L.append((lang, vocab.getTerm(lang).title))
         else:      
-            langs = plt.listSupportedLanguages()
-            for l in langs:
-                L.append((l[0], translate(l[1]) ))
+            L = plt.listSupportedLanguages()
         L.sort()
         return DisplayList(L)
 
