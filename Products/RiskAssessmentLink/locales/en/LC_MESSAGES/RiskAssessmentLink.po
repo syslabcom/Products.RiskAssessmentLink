@@ -28,12 +28,13 @@ msgstr "Here you can add an in-depth comment"
 #. Default: "Addtional keywords"
 #: k/content/RiskAssessmentLink.py:119
 msgid "ra_additionalKeywords_label"
-msgstr "Addtional keywords"
+msgstr "Activity / Workplace"
 
 #. Default: "Here you can add additional keywords"
 #: k/content/RiskAssessmentLink.py:120
 msgid "ra_additionalKeywords_description"
-msgstr "Here you can add additional keywords"
+msgstr "Here you can add activities or workplaces that are relevant for this "
+"procedural guideline."
 
 #. Default: "Sector (NACE Code)"
 #: k/content/RiskAssessmentLink.py:134
