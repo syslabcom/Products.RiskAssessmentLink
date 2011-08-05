@@ -1,0 +1,283 @@
+# Wolfgang Thomas <info@syslab.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: RiskAssessmentLink\n"
+"POT-Creation-Date: 2008-05-06 09:19+0000\n"
+"PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
+"Last-Translator: Wolfgang Thomas <info@syslab.com>\n"
+"Language-Team: Wolfgang Thomas <info@syslab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Domain: RiskAssessmentLink\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8\n"
+
+#. Default: "Remarks"
+#: k/content/RiskAssessmentLink.py:108
+msgid "ra_remarks_label"
+msgstr "Remarks"
+
+#. Default: "Here you can add an in-depth comment"
+#: k/content/RiskAssessmentLink.py:109
+msgid "ra_remarks_description"
+msgstr "Here you can add an in-depth comment"
+
+#. Default: "Addtional keywords"
+#: k/content/RiskAssessmentLink.py:119
+msgid "ra_additionalKeywords_label"
+msgstr "Addtional keywords"
+
+#. Default: "Here you can add additional keywords"
+#: k/content/RiskAssessmentLink.py:120
+msgid "ra_additionalKeywords_description"
+msgstr "Here you can add additional keywords"
+
+#. Default: "Sector (NACE Code)"
+#: k/content/RiskAssessmentLink.py:134
+msgid "ra_nace_label"
+msgstr "Sector (NACE Code)"
+
+#. Default: "Pick one or more entries"
+#: k/content/RiskAssessmentLink.py:135
+msgid "ra_nace_description"
+msgstr "Pick one or more entries"
+
+#. Default: "You can use the Add button to select sectors by browsing the
+#. vocabulary. Or you can type in a term or parts of it in the quicksearch
+#. field and then click on an item in the results list."
+#: k/content/RiskAssessmentLink.py:137
+msgid "ra_nace_quicksearch_help_text"
+msgstr ""
+"You can use the Add button to select sectors by browsing the vocabulary. Or "
+"you can type in a term or parts of it in the quicksearch field and then "
+"click on an item in the results list."
+
+#. Default: "Risk factors"
+#: k/content/RiskAssessmentLink.py:144
+msgid "ra_riskfactors_label"
+msgstr "Risk factors"
+
+#. Default: ""
+#: k/content/RiskAssessmentLink.py:146
+msgid "ra_riskfactors_description"
+msgstr ""
+
+#. Default: "You can use the Add button to select risk factors by browsing the
+#. vocabulary. Or you can type in a term or parts of it in the quicksearch
+#. field and then click on an item in the results list."
+#: k/content/RiskAssessmentLink.py:149
+msgid "ra_riskfactors_quicksearch_help_text"
+msgstr ""
+"You can use the Add button to select risk factors by browsing the "
+"vocabulary. Or you can type in a term or parts of it in the quicksearch "
+"field and then click on an item in the results list."
+
+#. Default: "Medium"
+#: k/content/RiskAssessmentLink.py:173
+msgid "ra_medium_label"
+msgstr "Medium"
+
+#. Default: "Pick the type of the medium"
+#: k/content/RiskAssessmentLink.py:174
+msgid "ra_medium_description"
+msgstr "Pick the type of the medium"
+
+#. Default: "Type / methodology"
+#: k/content/RiskAssessmentLink.py:196
+msgid "ra_type_methodology_label"
+msgstr "Type / methodology"
+
+#. Default: ""
+#: k/content/RiskAssessmentLink.py:197
+msgid "ra_type_methodology_description"
+msgstr ""
+
+#. Default: "Price"
+#: k/content/RiskAssessmentLink.py:185
+msgid "ra_price_label"
+msgstr "Price"
+
+#. Default: ""
+#: k/content/RiskAssessmentLink.py:186
+msgid "ra_price_description"
+msgstr ""
+
+#. Default: "Free for members"
+#: k/content/RiskAssessmentLink.py
+msgid "ra_free_for_members_label"
+msgstr "Free for members"
+
+#. Default: ""
+#: k/content/RiskAssessmentLink.py
+msgid "ra_free_for_members_description"
+msgstr "Please leave blank if free of charge."
+
+#. Default: "Free of charge"
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_view.pt
+msgid "ra_free_of_charge"
+msgstr "Free of charge"
+
+#. Default: "Recommended for small companies"
+#: k/content/RiskAssessmentLink.py:194
+msgid "ra_sme_label"
+msgstr "Recommended for small companies"
+
+#. Default: "Can be used without existing knowledge in occupational safety and
+#. health."
+#: k/content/RiskAssessmentLink.py:195
+msgid "ra_sme_description"
+msgstr ""
+"Can be used without existing knowledge in occupational safety and health."
+
+#. Default: "Countries"
+#: k/content/RiskAssessmentLink.py:205
+msgid "ra_countries_label"
+msgstr "Countries"
+
+#. Default: "Select one or more countries appropriate for this content"
+#: k/content/RiskAssessmentLink.py:206
+msgid "ra_countries_description"
+msgstr "Select one or more countries appropriate for this content"
+
+#. Default: "Remote language"
+#: k/content/RiskAssessmentLink.py:215
+msgid "ra_remoteLanguage_label"
+msgstr "Remote language"
+
+#. Default: "The language of the linked contents"
+#: k/content/RiskAssessmentLink.py:216
+msgid "ra_remoteLanguage_deswcription"
+msgstr "The language of the linked contents"
+
+#. Default: "Provider of this information"
+#: k/content/RiskAssessmentLink.py:233
+msgid "ra_remoteProvider_label"
+msgstr "Provider of this information"
+
+#. Default: ""
+#: k/content/RiskAssessmentLink.py:234
+msgid "ra_remoteProvider_description"
+msgstr ""
+
+#. Default: "Category independent"
+#: k/content/RiskAssessmentLink.py:245
+msgid "ra_categoryIndependent_label"
+msgstr "Category independent"
+
+#. Default: "Description for categoryIndependent"
+#: k/content/RiskAssessmentLink.py:246
+msgid "ra_categoryIndependent_description"
+msgstr "Tick here to limit your search to general and introductory Risk Assessment Links."
+
+#. Default: "Short description (3-8 lines)"
+#: k/content/RiskAssessmentLink.py:63
+msgid "ra_description_label"
+msgstr "Short description (3-8 lines)"
+
+#. Default: "Please enter a short descriptive text"
+#: k/content/RiskAssessmentLink.py:64
+msgid "ra_description_description"
+msgstr "Please enter a short descriptive text"
+
+#. Default: "URL"
+#: k/content/RiskAssessmentLink.py:75
+msgid "ra_remoteUrl_label"
+msgstr "URL"
+
+#. Default: "The web address of the remote information."
+#: k/content/RiskAssessmentLink.py:76
+msgid "ra_remoteUrl_description"
+msgstr "The web address of the remote information."
+
+#. Default: "Date of last editing"
+#: k/content/RiskAssessmentLink.py:84
+msgid "ra_dateOfEditing_label"
+msgstr "Date of last editing"
+
+#. Default: "Enter the date when the action guideline was last updated."
+#: k/content/RiskAssessmentLink.py:85
+msgid "ra_dateOfEditing_description"
+msgstr "Enter the date when the action guideline was last updated."
+
+#. Default: "Risk assessment contents"
+#: k/content/RiskAssessmentLink.py:93
+msgid "ra_contents_label"
+msgstr "Risk assessment contents"
+
+#. Default: "Check if applicable"
+#: k/content/RiskAssessmentLink.py:94
+msgid "ra_contents_description"
+msgstr "Check if applicable"
+
+#. Default: "Details"
+#: k/skins/riskassessmentlink_templates/portlet_riskassessmentlink_details.pt:16
+msgid "box_details"
+msgstr "Details"
+
+#. Default: "Go to action help"
+#: k/skins/riskassessmentlink_templates/portlet_riskassessmentlink_details.pt:28
+msgid "link_to_actionhelp"
+msgstr "Go to procedural guideline"
+
+#. Default: "Go to provider"
+#: k/skins/riskassessmentlink_templates/portlet_riskassessmentlink_details.pt:53
+msgid "link_to_provider"
+msgstr "Go to provider"
+
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:137
+msgid "Reset"
+msgstr "Reset"
+
+#. Default: "Title"
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:178
+msgid "label_title"
+msgstr "Title"
+
+#. Default: "Detailed Search"
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:63
+msgid "heading_detail_search"
+msgstr "Detailed Search"
+
+#. Default: ""
+#.  "Filter your search by selecting one or more of the filters.\n"
+#.  "                    You can always remove any filter again by selecting
+#. the empty entry or by clicking the Reset button."
+#: k/skins/riskassessmentlink_templates/riskassessmentlink_db_view.pt:81
+msgid "help_db_filter"
+msgstr ""
+"Filter your search by selecting one or more of the filters. "
+"You can always remove any filter again by selecting the "
+"empty entry or by clicking the Reset button."
+
+#. Default "Die vollständige Bearbeitung des Datensatzes besteht aus den
+#. folgenden 4 Formularseiten"
+#: /gfb/theme/browser/editing_help.pt
+msgid "ra_edit_general_help"
+msgstr "Editing a Risk Assessment Link consists of the following four forms:"
+
+msgid "ra_continue_to_guideline"
+msgstr "Continue to procedural guideline"
+
+msgid "portlet_radetails_title"
+msgstr "About the procedural guideline"
+
+msgid "portlet_radetails_available_as"
+msgstr "Available as..."
+
+msgid "ra_label_characteristics"
+msgstr "Characteristics"
+
+msgid "label_any_language"
+msgstr "Any language"
+
+msgid "label_country"
+msgstr "Information applies to"
+
+msgid "label_select"
+msgstr "Please select..."
+
+msgid "label_remote_language"
+msgstr "Language version"
