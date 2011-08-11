@@ -14,7 +14,6 @@ else:
 
 from zope.interface import implements
 import interfaces
-#from Products.ATContentTypes.content.document import ATDocument
 from Products.ATContentTypes.content.base import ATCTContent
 from Products.ATContentTypes.content.schemata import ATContentTypeSchema
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
@@ -23,7 +22,6 @@ from Products.ATVocabularyManager.namedvocabulary import NamedVocabulary
 from Products.RiskAssessmentLink.config import *
 
 from Products.ATCountryWidget.Widget import CountryWidget, MultiCountryWidget
-from Products.VocabularyPickerWidget.VocabularyPickerWidget import VocabularyPickerWidget
 from Products.DataGridField.DataGridField import DataGridField
 from Products.DataGridField.DataGridWidget import DataGridWidget
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
@@ -156,22 +154,6 @@ schema = Schema((
         multiValued=True,
         vocabulary=NamedVocabulary("""RiskFactors"""),
     ),
-#    LinesField(
-#        name='occupation',
-#        languageIndependent=True,
-#        widget=VocabularyPickerWidget(
-#            label="Occupation",
-#            vocabulary='ISCO',
-#            description="Select one or more entries",
-#            level=2,
-#            label_msgid='RiskAssessmentLink_label_occupation',
-#            description_msgid='RiskAssessmentLink_help_occupation',
-#            i18n_domain='RiskAssessmentLink',
-#        ),
-#        enforceVocabulary=False,
-#        schemata="Occupation",
-#        multiValued=True,
-#    ),
     LinesField(
         name='medium',
         languageIndependent=True,
@@ -254,10 +236,12 @@ schema = Schema((
     ReferenceField(
         name='remoteProvider',
         languageIndependent=True,
-        widget=ReferenceWidget(
+        widget=ReferenceBrowserWidget(
             label=_(u'ra_remoteProvider_label', default=u'Provider of this information'),
             description=_(u'ra_remoteProvider_description', default=u''),
             condition="python:object.REQUEST.get('mode', '')=='search' or object.portal_membership.getAuthenticatedMember().allowed(object, ['Manager'])",
+            allow_browse=False,
+            show_results_without_query=True,
         ),
         allowed_types=('Provider',),
         relationship="provider_of",
