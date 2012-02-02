@@ -39,7 +39,7 @@ class DataExtractor(object):
 
             ftype = field.getType()
             if ftype == 'Products.Archetypes.Field.ReferenceField':
-                data[fname] = field.getRaw(self.context)
+                data[fname] = field.getRaw(self.context.getCanonical())
             else:
                 value = field.getAccessor(self.context)()
                 if value is None:
