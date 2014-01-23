@@ -15,13 +15,13 @@
                        templateId template/getId;
                        ">
 <script language="javascript">
-jq(document).ready(function(){
-	jq('.toggle_container').hide();
+jQuery(document).ready(function(){
+	jQuery('.toggle_container').hide();
 
 	//Slide up and down & toggle the Class on click
-	jq('.nutzungshinweise').click(function(){
-		jq(this).toggleClass('active');
-		jq('.toggle_container').slideToggle('slow');
+	jQuery('.nutzungshinweise').click(function(){
+		jQuery(this).toggleClass('active');
+		jQuery('.toggle_container').slideToggle('slow');
 	});
 });
 </script>
