@@ -19,6 +19,8 @@ def link_edited(obj, event):
         obj.setCategoryIndependent(True)
     else:
         obj.setCategoryIndependent(False)
+    setattr(obj, 'original_url_path', obj.absolute_url_path())
+
 
     def getMyProvider(self):
         pm = getToolByName(self, 'portal_membership')
