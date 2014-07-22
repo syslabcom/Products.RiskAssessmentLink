@@ -1,2 +1,7 @@
 recursive-include Products *
 global-exclude *pyc
+# added by check_manifest.py
+include *.txt
+recursive-include docs *.EUPL
+recursive-include docs *.GPL
+recursive-include docs *.txt
