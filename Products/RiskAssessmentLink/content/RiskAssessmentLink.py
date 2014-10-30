@@ -108,8 +108,6 @@ schema = Schema((
             label=_(u'ra_remarks_label', default=u'Remarks'),
             description=_(u'ra_remarks_description', default=u'Here you can add an in-depth comment'),
         ),
-        default_output_type="text/html",
-        default_content_type="text/html",
         required=True,
         searchable=True,
     ),
