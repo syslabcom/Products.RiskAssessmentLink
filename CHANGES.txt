@@ -1,7 +1,7 @@
 Products.RiskAssessmentLink Changelog
 =====================================
 
-1.3.3 (unreleased)
+1.3.3 (2014-10-30)
 ------------------
 
 - #10843 translating a RiskAssessment link caused the html source to
