@@ -8,7 +8,7 @@
 <body>
 
 <metal:main fill-slot="main">
-	
+
 	    <tal:main-macro metal:define-macro="main"
            tal:define="kssClassesView context/@@kss_field_decorator_view;
                        getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
@@ -43,15 +43,15 @@ jQuery(document).ready(function(){
         <div class="nutzungshinweise" >
             <a class="singlelink trigger" i18n:domain="gfb"
                i18n:translate="link_nutzungshinweise">Nutzungshinweise</a>
-               
+
             <span class="toggle_container"
-                  id="body_nutzungshinweise">  
+                  id="body_nutzungshinweise">
                   <span tal:define="preflang here/portal_languages/getPreferredLanguage;
                                     portal here/portal_url/getPortalObject;
                                     nutzung python:portal.restrictedTraverse('%s/handlungshilfen/datenbank/nutzung/nutzungshinweise' % preflang, None)"
                         tal:condition="nutzung"
-                        tal:content="structure nutzung/getText" />           
-            </span>   
+                        tal:content="structure nutzung/getText" />
+            </span>
         </div>
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
@@ -61,14 +61,18 @@ jQuery(document).ready(function(){
             </metal:field>
         </p>
 
+        <p id="inline_link_to_tool">
+            <a i18n:translate="ra_continue_to_guideline" target="_new"
+            tal:attributes="href here/getRemoteUrl">Continue to procedural guideline</a>
+        </p>
 
-       <span tal:define="remoteProvider here/getRemoteProvider">
+       <tal:provider tal:define="remoteProvider here/getRemoteProvider">
           <tal:condition condition="remoteProvider" tal:on-error="nothing">
                 <tal:block repeat="p remoteProvider">
                     <p>
 						<a
-						   tal:attributes="href p/getRemoteUrl">
-							<span tal:replace="python:here.getField('remoteProvider').widget.label">
+						   tal:attributes="href p/getRemoteUrl"><span
+               tal:replace="python:here.getField('remoteProvider').widget.label">
 								Remote Provider
 							</span>:
                         	<span tal:content="p/Title" />
@@ -76,16 +80,16 @@ jQuery(document).ready(function(){
 					</p>
                 </tal:block>
           </tal:condition>
-        </span>
-       
+        </tal:provider>
+
 
        <label i18n:translate="ra_label_characteristics">Characteristics</label>
 
         <div id="risktable">
-        
+
             <div class="riskfield"
                  tal:condition="python:len(here.getRiskfactors())">
-                <div class="risklabel" 
+                <div class="risklabel"
                      tal:content="python:here.getField('riskfactors').widget.label">Risk Factors</div>
                 <div class="riskvalue">
                 <metal:field use-macro="python:here.widget('riskfactors', mode='view')">
@@ -99,22 +103,22 @@ jQuery(document).ready(function(){
 
             <div class="riskfield"
                  tal:condition="python:len(here.getNace())">
-                <div class="risklabel" 
+                <div class="risklabel"
                      tal:content="python:here.getField('nace').widget.label">Sector</div>
                 <div class="riskvalue">
                     <metal:field use-macro="python:here.widget('nace', mode='view')">
                     Sector
                     </metal:field>
                 </div>
-    
+
                 <div class="visualClear"></div>
 
             </div>
-            
+
 
             <div class="riskfield"
                  tal:condition="here/getAdditionalKeywords">
-                <div class="risklabel" 
+                <div class="risklabel"
                      tal:content="python:here.getField('additionalKeywords').widget.label">Affects the following keywords</div>
 
                 <div class="riskvalue">
@@ -126,12 +130,12 @@ jQuery(document).ready(function(){
                 <div class="visualClear"></div>
 
             </div>
-            
-        
-            
+
+
+
             <div class="riskfield"
                  tal:condition="here/getDateOfEditing">
-                <div class="risklabel" 
+                <div class="risklabel"
                      tal:content="python:here.getField('dateOfEditing').widget.label">Date of Editing</div>
 
                 <div class="riskvalue">
@@ -146,12 +150,12 @@ jQuery(document).ready(function(){
 
             <div class="riskfield"
                  tal:condition="here/getSme">
-                <div class="risklabel" 
+                <div class="risklabel"
                      tal:content="python:here.getField('sme').widget.label">SME</div>
 
                 <div class="visualClear"></div>
 
-            </div>        
+            </div>
         </div>
 
 
